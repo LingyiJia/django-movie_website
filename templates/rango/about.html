@@ -1,0 +1,41 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Movie details
+{% endblock %}
+
+{% block body_block %}
+<!-- This is the details page about movie 1 -->
+<div class="jumbotron p-4">
+    <div class="container">
+        <h1 class="jumbotron-heading">Monster House</h1>
+    </div>
+</div>
+<br />
+<br />
+<hr>
+<!-- Details of the movie1 -->
+<div class="container"><img src="{% static 'images/1.jpg' %}" alt="1" width="50%" , height="60%" />
+    <br />
+    <div>
+        <br />
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>Directed ：Gil Kenan</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong>The
+                main actor:Steve Buscemi，Nick Cannon</strong></p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>Running time：91 minutes</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>language: English</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong><a
+                    href="https://www.youtube.com/watch?v=l_zWmR86A0E">Play the movie</strong></p>
+        <hr>
+    </div>
+</div>
+
+
+{% endblock %}

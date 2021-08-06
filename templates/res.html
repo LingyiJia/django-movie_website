@@ -1,0 +1,53 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+About Rango
+{% endblock %}
+
+{% block body_block %}
+<h1>Movies</h1>
+<h2>Choose By PG LEVEL</h2>
+<div class="pglevel">
+    <div align="center">
+        <p>1-3</p>
+    </div>
+    <div align="center">
+        <p>4-6</p>
+    </div>
+    <div align="center">
+        <p>7-9</p>
+    </div>
+    <div align="center">
+        <p>OVER 10</p>
+    </div>
+</div>
+
+<div class="imgblock1">
+    <div align="center">
+        <img src="{% static 'images/1.jpg' %}" alt="Paris" height="200" width="200">
+        <p><strong>ELI</strong></p>
+    </div>
+    <div align="center">
+        <img src="{% static 'images/1.jpg' %}" alt="Paris" height="200" width="200">
+        <p><strong>READY OR NOT</strong></p>
+    </div>
+    <div align="center">
+        <img src="{% static 'images/1.jpg' %}" alt="Paris" height="200" width="200">
+        <p><strong>READY OR NOT</strong></p>
+    </div>
+    <div align="center">
+        <img src="{% static 'images/1.jpg' %}" alt="Paris" height="200" width="200">
+        <p><strong>IASON</strong></p>
+    </div>
+    <div align="center">
+        <img src="{% static 'images/1.jpg' %}" alt="Paris" height="200" width="200">
+        <p><strong>THE CONJURING</strong></p>
+    </div>
+    <div align="center">
+        <img src="{% static 'images/1.jpg' %}" alt="Paris" height="200" width="200">
+        <p><strong>CORPSE BRIDE</strong></p>
+
+    </div>
+</div>
+{% endblock %}

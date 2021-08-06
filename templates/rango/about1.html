@@ -1,0 +1,41 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Movie details
+{% endblock %}
+
+{% block body_block %}
+<!-- This is the details page about movie 2 -->
+<div class="jumbotron p-4">
+    <div class="container">
+        <h1 class="jumbotron-heading">Eli</h1>
+    </div>
+</div>
+<br />
+<br />
+<hr>
+<!-- Details of the movie2 -->
+<div class="container"><img src="{% static 'images/2.jpg' %}" alt="1" width="50%" , height="60%" />
+    <br />
+    <div>
+        <br />
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>Directed ：Ciarán Foy</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong>The
+                main actor:Kelly Reilly，Sadie Sink</strong></p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>Running time：98 minutes</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>language: English</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong><a
+                    href="https://www.youtube.com/watch?v=qfSTiAw1rkM">Play the movie</strong></p>
+        <hr>
+    </div>
+</div>
+
+
+{% endblock %}

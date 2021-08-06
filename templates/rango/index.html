@@ -1,0 +1,170 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Homepage
+{% endblock %}
+
+{% block body_block %}
+<!-- This is the home page of the website -->
+
+<head>
+    <title>Bootstrap Theme Company</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'css/g1.css' %}">
+</head>
+
+<!-- the below part of code define the header -->
+<div class="jumbotron p-4">
+    <div class="container">
+        <h1 class="jumbotron-heading"><em><strong>Horryaddict</strong></em></h1>
+        <div>
+            <h3 class="h3">
+                {% if user.is_authenticated %}
+                Enjoy Movies {{ user.username }}!
+                {% else %}
+                Welcome to our website!
+                {% endif %}
+            </h3>
+            <strong>{{ boldmessage }}</strong>
+        </div>
+    </div>
+</div>
+
+<!-- the below part of code define the body-->
+<div class="container text-center">
+    <h3>We love horrible movies!</h3>
+    <p style="font-size:1.2em">We have created a horrible movies website, aims to provide people who like horrible
+        movies
+        a place to
+        share their
+        favorite movies. Horror movies are scary. They’re gross. They make you think about death and fear for your life.
+        And yet, for many of us, they’re a blast to watch—the best way to spend a Friday night. Although a large number
+        of horror movies are released every year, many movies are shoddy. People who like horror movies often lose their
+        enthusiasm for watching horror movies because of these bad movies.So we created this website to give horror
+        movie fans a better viewing experience and avoid some bad horror movies.</p>
+    <div class="container"><img src="{% static 'images/horror2.jpg' %}" alt="Picture of Horror" /></div>
+</div>
+<br />
+<br />
+
+<!-- Previews of some recent movies -->
+<div class="jumbotron p-4">
+    <div class="container">
+        <div class="container text-center">
+            <h2 style="font-size:2.5em; color:rgb(70, 10, 22)"><strong>New released Movies</strong></h2>
+            <br />
+            <br />
+            <div class="row text-center">
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="{% static 'images/horror7.jpg' %}" alt="2">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="{% static 'images/horror5.jpg' %}" alt="2">
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="thumbnail">
+                        <img src="{% static 'images/horror6.jpg' %}" alt="3">
+                    </div>
+                </div>
+            </div>
+            <div class="container text-center">
+                <br />
+                <div class="row text-center">
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="{% static 'images/horror8.jpg' %}" alt="2">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="{% static 'images/horror9.jpg' %}" alt="2">
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="thumbnail">
+                            <img src="{% static 'images/horror10.jpg' %}" alt="3">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Show Most Liked Categories & Most Viewed Movies -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card mb-6">
+                <div class="card-body">
+                    <h2>Most Liked Categories</h2>
+                    <p class="card-text">
+                        {% if categories %}
+                    <ul class="list-group">
+                        {% for category in categories %}
+                        <li class="list-group-item">
+                            <a href="{% url 'rango:show_category' category.slug %}">
+                                {{ category.name }}</a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <strong>There are no categories present.</strong>
+                    {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card mb-6">
+                <div class="card-body">
+                    <h2>Most Viewed Movies</h2>
+                    <p class="card-text">
+                        {% if pages %}
+                    <ul class="list-group">
+                        {% for page in pages %}
+                        <li class="list-group-item"><a href="{{ page.url }}">{{ page.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    {% else %}
+                    <strong>There are no pages present.</strong>
+                    {% endif %}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+<br>
+
+<!-- Our contact information -->
+
+<div class="jumbotron p-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+
+                <p style="font-size:1.4em"><span class="glyphicon glyphicon-map-marker"></span><strong>Address:</strong>
+                    Glasgow, UK
+                </p>
+                <p style="font-size:1.4em"><span class="glyphicon glyphicon-phone"></span><strong>Phone
+                        number:</strong> +44
+                    07784751746</p>
+                <p style="font-size:1.4em"><span class="glyphicon glyphicon-envelope"></span><strong>Email:</strong>
+                    lenderlc@outlook.com
+                </p>
+                <a href="{% url 'rango:add_contact' %}">
+                    <p style="font-size:1.4em">Contact us and we'll get back to you within 24 hours.</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

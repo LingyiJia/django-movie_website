@@ -1,0 +1,55 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+{% load rango_template_tags %}
+
+{% block title_block %}
+Restricted Page
+{% endblock %}
+
+{% block body_block %}
+<!-- all movies  -->
+<div class="jumbotron p-4">
+  <div class="container">
+    <h1>Movies</h1>
+    <h2>Choose By PG LEVEL</h2>
+    <div>
+      <div>
+        {% block sidebar_block %}
+        {% get_category_list category %}
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+
+  <!-- shows the information about the movies we provide -->
+  <div class="container text-center row">
+    <div class="col-sm-4">
+      <img src="{% static 'images/1.jpg' %}" alt="Paris" height="200" width="200">
+      <p><strong>Monster house</strong></p>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'images/2.jpg' %}" alt="Paris" height="200" width="200">
+      <p><strong>ELI</strong></p>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'images/3.jpg' %}" alt="Paris" height="200" width="200">
+      <p><strong>READY OR NOT</strong></p>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'images/7.jpg' %}" alt="Paris" height="200" width="200">
+      <p><strong>Spiral</strong></p>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'images/5.jpg' %}" alt="Paris" height="200" width="200">
+      <p><strong>THE CONJURING</strong></p>
+    </div>
+    <div class="col-sm-4">
+      <img src="{% static 'images/6.jpg' %}" alt="Paris" height="200" width="200">
+      <p><strong>CORPSE BRIDE</strong></p>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}s

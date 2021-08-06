@@ -1,0 +1,41 @@
+{% extends 'rango/base.html' %}
+{% load staticfiles %}
+
+{% block title_block %}
+Movie details
+{% endblock %}
+
+{% block body_block %}
+<!-- This is the details page about movie 3 -->
+<div class="jumbotron p-4">
+    <div class="container">
+        <h1 class="jumbotron-heading">READY OR NOT</h1>
+    </div>
+</div>
+<br />
+<br />
+<hr>
+<!-- Details of the movie3 -->
+<div class="container"><img src="{% static 'images/3.jpg' %}" alt="1" width="50%" , height="60%" />
+    <br />
+    <div>
+        <br />
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>Directed ：Matt Bettinelli-Olpin，Tyler Gillett</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong>The
+                main actor:Steve Samara Weaving，Adam Brody</strong></p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>Running time：95 minutes</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+            <strong>language: English</strong>
+        </p>
+        <p style="font-size:1.4em; font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;"><strong><a
+                    href="https://www.youtube.com/watch?v=ZtYTwUxhAoI">Play the movie</strong></p>
+        <hr>
+    </div>
+</div>
+
+
+{% endblock %}
